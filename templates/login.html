@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Studio - Login Luckbet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>🎯 Football Studio</h1>
+            <p>Sistema de Estratégia Luckbet</p>
+        </div>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ 'success' if category == 'success' else 'error' }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <form method="POST" action="{{ url_for('login') }}">
+            <div class="form-group">
+                <label for="email">Email Luckbet:</label>
+                <input type="email" id="email" name="email" required 
+                       placeholder="Seu email da Luckbet">
+            </div>
+            
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required 
+                       placeholder="Sua senha da Luckbet">
+            </div>
+            
+            <button type="submit" class="login-btn">
+                🚀 Entrar e Iniciar Monitoramento
+            </button>
+        </form>
+        
+        <div class="info-box">
+            <h3>📋 Como Funciona:</h3>
+            <ul>
+                <li>Digite suas credenciais da Luckbet</li>
+                <li>O sistema fará login automaticamente</li>
+                <li>Será direcionado para o Football Studio</li>
+                <li>Monitoramento em tempo real das cartas</li>
+                <li>Histórico e estatísticas para estratégia</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

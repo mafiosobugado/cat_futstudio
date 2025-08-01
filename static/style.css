@@ -1,0 +1,487 @@
+/* ================================================================
+   FOOTBALL STUDIO - SISTEMA INTEGRADO
+   CSS unificado e otimizado - versão limpa
+   ================================================================ */
+
+/* RESET E VARIÁVEIS GLOBAIS */
+:root {
+    --primary-black: #000000;
+    --primary-gold: #ffd700;
+    --light-gold: #ffed4e;
+    --dark-gold: #b8860b;
+    --secondary-bg: #1a1a1a;
+    --card-bg: #2a2a2a;
+    --border-color: #444;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #888888;
+    --success-color: #00ff00;
+    --error-color: #ff0000;
+    --warning-color: #ff6600;
+    --danger-color: #ff4444;
+    --info-color: #4444ff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--secondary-bg), #16213e);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ================================================================
+   PÁGINA DE LOGIN
+   ================================================================ */
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    background: var(--secondary-bg);
+    border: 2px solid var(--primary-gold);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h1 {
+    color: var(--primary-gold);
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--primary-gold);
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    border: 1px solid #555;
+    border-radius: var(--border-radius);
+    color: var(--text-primary);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--primary-gold), var(--light-gold));
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--primary-black);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.alert {
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.alert-success {
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid var(--success-color);
+    color: var(--success-color);
+}
+
+.alert-error {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid var(--error-color);
+    color: var(--error-color);
+}
+
+.info-box {
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid var(--primary-gold);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.info-box h3 {
+    color: var(--primary-gold);
+    margin-bottom: 10px;
+}
+
+.info-box ul {
+    color: var(--text-secondary);
+    margin: 0;
+    padding-left: 20px;
+}
+
+.info-box li {
+    margin-bottom: 5px;
+}
+
+/* ================================================================
+   SISTEMA INTEGRADO
+   ================================================================ */
+
+.game-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 20px;
+    height: 100vh;
+    padding: 10px;
+}
+
+.game-frame {
+    background: var(--secondary-bg);
+    border: 2px solid var(--primary-gold);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.game-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.floating-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--text-primary);
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    z-index: 1000;
+    border: 1px solid var(--primary-gold);
+}
+
+.sidebar {
+    background: var(--secondary-bg);
+    border: 2px solid var(--primary-gold);
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* LOGO E CABEÇALHO */
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.logo-title {
+    color: var(--primary-gold);
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.logo-subtitle {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin: 0;
+}
+
+/* STATUS E INDICADORES */
+.status-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #666;
+    transition: var(--transition);
+}
+
+.status-dot.active {
+    background: var(--success-color);
+    box-shadow: 0 0 10px var(--success-color);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.status-text {
+    color: var(--text-primary);
+}
+
+.status-details {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+/* CONTROLES E BOTÕES */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--success-color), #32cd32);
+    color: var(--primary-black);
+}
+
+.btn-advanced {
+    background: linear-gradient(135deg, var(--warning-color), #ff8800);
+    color: var(--text-primary);
+}
+
+.btn-stop {
+    background: linear-gradient(135deg, var(--danger-color), #cc0000);
+    color: var(--text-primary);
+}
+
+.btn-test {
+    background: linear-gradient(135deg, #ff6b35, #e55a2b);
+    color: var(--text-primary);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ESTATÍSTICAS */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-gold);
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-gold);
+    display: block;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.stat-vermelho { color: var(--danger-color) !important; }
+.stat-azul { color: var(--info-color) !important; }
+.stat-empate { color: var(--primary-gold) !important; }
+
+/* HISTÓRICO DE JOGOS */
+.recent-games {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.games-title {
+    color: var(--primary-gold);
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+.waiting-message {
+    text-align: center;
+    color: #666;
+    padding: 20px;
+}
+
+.game-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    margin: 5px 0;
+    background: #1a1a1a;
+    border-radius: 4px;
+    border-left: 3px solid #666;
+    font-size: 13px;
+    transition: var(--transition);
+}
+
+.game-row:hover {
+    background: rgba(255, 215, 0, 0.1);
+    transform: translateX(3px);
+}
+
+.game-row.casa {
+    border-left-color: var(--danger-color);
+    background: rgba(255, 68, 68, 0.1);
+}
+
+.game-row.visitante {
+    border-left-color: var(--info-color);
+    background: rgba(68, 68, 255, 0.1);
+}
+
+.game-row.empate {
+    border-left-color: var(--primary-gold);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.game-cards {
+    display: flex;
+    gap: 5px;
+}
+
+.card-mini {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.card-vermelho {
+    background: var(--danger-color);
+    color: var(--text-primary);
+}
+
+.card-azul {
+    background: var(--info-color);
+    color: var(--text-primary);
+}
+
+/* SCROLLBAR PERSONALIZADA */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* ================================================================
+   RESPONSIVIDADE
+   ================================================================ */
+
+@media (max-width: 1024px) {
+    .game-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+    }
+    
+    .sidebar {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        margin: 50px auto;
+        padding: 30px;
+    }
+    
+    .game-container {
+        padding: 5px;
+        gap: 10px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .login-header h1 {
+        font-size: 24px;
+    }
+}

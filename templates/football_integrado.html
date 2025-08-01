@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Football Studio - Sistema Integrado</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <!-- JOGO INTEGRADO -->
+        <div class="game-frame">
+            <div class="floating-info">
+                <div>🎯 <strong>Football Studio Integrado</strong></div>
+                <div>📊 Monitoramento: <span id="monitor-status">Aguardando</span></div>
+                <div>⏰ <span id="last-update">--:--:--</span></div>
+            </div>
+            
+            <iframe 
+                id="gameFrame"
+                src="https://luck.bet.br/live-casino/game/1384453"
+                allow="camera; microphone; encrypted-media; fullscreen"
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <!-- PAINEL DE CONTROLE -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logomago.png') }}" alt="Academia do Mago">
+                <h3 class="logo-title">Football Studio</h3>
+                <p class="logo-subtitle">Jogue e Monitore</p>
+            </div>
+            
+            <div class="status-panel">
+                <div class="status-indicator">
+                    <div class="status-dot" id="statusDot"></div>
+                    <span class="status-text" id="statusText">Sistema Aguardando</span>
+                </div>
+                <div class="status-details" id="statusDetails">
+                    Clique em "Iniciar Monitoramento" para começar
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="btn btn-primary" onclick="iniciarMonitoramentoIntegrado()">
+                    🎯 Iniciar Monitoramento Real
+                </button>
+                <button class="btn btn-advanced" onclick="iniciarSistemaAvancado()">
+                    🔬 Sistema Avançado Real
+                </button>
+                <button class="btn btn-stop" onclick="pararMonitoramento()">
+                    ⏹️ Parar Sistema
+                </button>
+                
+                <button class="btn btn-test" onclick="testarCaptura()">
+                    📸 Testar Captura
+                </button>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalRodadas">0</div>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number stat-vermelho" id="vitoriasVermelho">0</div>
+                    <div class="stat-label">Vermelho</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number stat-azul" id="vitoriasAzul">0</div>
+                    <div class="stat-label">Azul</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number stat-empate" id="empates">0</div>
+                    <div class="stat-label">Empates</div>
+                </div>
+            </div>
+            
+            <div class="recent-games">
+                <h4 class="games-title">🎮 Últimas Rodadas</h4>
+                <div id="recentGamesList">
+                    <div class="waiting-message">
+                        Aguardando dados...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let monitoramentoAtivo = false;
+        let statusInterval;
+        
+        // Função para monitoramento integrado (mais simples)
+        function iniciarMonitoramentoIntegrado() {
+            fetch('/iniciar_monitoramento_integrado', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        monitoramentoAtivo = true;
+                        atualizarStatus('Monitoramento Ativo', 'Sistema capturando dados do iframe', true);
+                        iniciarAtualizacaoStatus();
+                        
+                        // Tentar monitorar o iframe
+                        monitorarIframe();
+                    } else {
+                        alert('❌ Erro: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    alert('❌ Erro ao iniciar monitoramento');
+                });
+        }
+        
+        // Função para sistema avançado
+        function iniciarSistemaAvancado() {
+            fetch('/iniciar_captura_avancada', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        monitoramentoAtivo = true;
+                        atualizarStatus('Sistema Avançado', 'Múltiplas estratégias ativas', true);
+                        iniciarAtualizacaoStatus();
+                        alert('🔬 Sistema Avançado Ativado!\n\n5 estratégias funcionando simultaneamente.');
+                    } else {
+                        alert('❌ Erro: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    alert('❌ Erro ao iniciar sistema avançado');
+                });
+        }
+        
+        // Função para testar captura
+        function testarCaptura() {
+            fetch('/capturar_teste', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('📸 ' + data.message);
+                    } else {
+                        alert('❌ ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    alert('❌ Erro ao testar captura');
+                });
+        }
+
+        // Função para parar monitoramento
+        function pararMonitoramento() {
+            fetch('/parar_monitor', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    monitoramentoAtivo = false;
+                    atualizarStatus('Sistema Parado', 'Monitoramento desativado', false);
+                    pararAtualizacaoStatus();
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                });
+        }
+        
+        // Atualizar status visual
+        function atualizarStatus(titulo, detalhes, ativo) {
+            document.getElementById('statusText').textContent = titulo;
+            document.getElementById('statusDetails').textContent = detalhes;
+            document.getElementById('monitor-status').textContent = ativo ? 'ATIVO' : 'Parado';
+            
+            const dot = document.getElementById('statusDot');
+            if (ativo) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        }
+        
+        // Iniciar atualização de status
+        function iniciarAtualizacaoStatus() {
+            statusInterval = setInterval(() => {
+                fetch('/status_monitor')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Atualizar estatísticas
+                        if (data.stats) {
+                            document.getElementById('totalRodadas').textContent = data.stats.total_rodadas || 0;
+                            document.getElementById('vitoriasVermelho').textContent = data.stats.vitorias_vermelho || 0;
+                            document.getElementById('vitoriasAzul').textContent = data.stats.vitorias_azul || 0;
+                            document.getElementById('empates').textContent = data.stats.empates || 0;
+                        }
+                        
+                        // Atualizar lista de rodadas
+                        if (data.ultimas_rodadas) {
+                            atualizarListaRodadas(data.ultimas_rodadas);
+                        }
+                        
+                        // Atualizar última atividade
+                        if (data.ultima_atividade) {
+                            document.getElementById('last-update').textContent = data.ultima_atividade;
+                        }
+                    })
+                    .catch(error => console.log('Erro ao atualizar:', error));
+            }, 3000);
+        }
+        
+        // Parar atualização de status
+        function pararAtualizacaoStatus() {
+            if (statusInterval) {
+                clearInterval(statusInterval);
+            }
+        }
+        
+        // Atualizar lista de rodadas
+        function atualizarListaRodadas(rodadas) {
+            const lista = document.getElementById('recentGamesList');
+            if (rodadas.length === 0) {
+                lista.innerHTML = '<div style="text-align: center; color: #666; padding: 20px;">Aguardando dados...</div>';
+                return;
+            }
+            
+            const html = rodadas.slice(-10).reverse().map(rodada => `
+                <div class="game-row">
+                    <div class="game-cards">
+                        <div class="card-mini card-vermelho">${rodada.carta_vermelha}</div>
+                        <div class="card-mini card-azul">${rodada.carta_azul}</div>
+                    </div>
+                    <div class="result-mini result-${rodada.resultado}">
+                        ${rodada.resultado === 'vermelho' ? '🔴' : rodada.resultado === 'azul' ? '🔵' : '🟡'}
+                    </div>
+                </div>
+            `).join('');
+            
+            lista.innerHTML = html;
+        }
+        
+        // Tentar monitorar iframe (limitado por CORS, mas tentamos)
+        function monitorarIframe() {
+            try {
+                const iframe = document.getElementById('gameFrame');
+                
+                // Listener para mudanças no iframe
+                iframe.addEventListener('load', () => {
+                    console.log('🎮 Jogo carregado no iframe');
+                    
+                    try {
+                        // Tentar acessar conteúdo do iframe (pode ser bloqueado por CORS)
+                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        console.log('📄 Acesso ao documento do iframe obtido');
+                        
+                        // Monitorar mudanças no DOM do iframe
+                        const observer = new MutationObserver((mutations) => {
+                            mutations.forEach((mutation) => {
+                                if (mutation.type === 'childList') {
+                                    console.log('🔄 Mudança detectada no jogo');
+                                    // Aqui poderíamos extrair dados se não fosse bloqueado por CORS
+                                }
+                            });
+                        });
+                        
+                        observer.observe(iframeDoc.body, {
+                            childList: true,
+                            subtree: true
+                        });
+                        
+                    } catch (error) {
+                        console.log('⚠️ CORS bloqueia acesso ao iframe (normal para sites externos)');
+                        console.log('✅ Usando sistema de backend para monitoramento');
+                    }
+                });
+                
+            } catch (error) {
+                console.log('❌ Erro no monitoramento do iframe:', error);
+            }
+        }
+        
+        // Inicializar quando a página carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 Sistema integrado inicializado');
+            atualizarStatus('Sistema Carregado', 'Pronto para monitorar', false);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1202 @@
+[
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": 4
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 6
+    },
+    "timestamp": "2025-07-31T01:58:16.133000",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": 3
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 8
+    },
+    "timestamp": "2025-07-31T02:06:09.212103",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": 3
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": 10
+    },
+    "timestamp": "2025-07-31T02:06:49.217244",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 12
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 2
+    },
+    "timestamp": "2025-07-31T02:07:29.226900",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": 12
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": 6
+    },
+    "timestamp": "2025-07-31T02:08:09.248495",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": 6
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 7
+    },
+    "timestamp": "2025-07-31T02:08:49.261732",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 6
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 9
+    },
+    "timestamp": "2025-07-31T02:09:29.304393",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": 11
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 11
+    },
+    "timestamp": "2025-07-31T02:10:09.322724",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": 10
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": 6
+    },
+    "timestamp": "2025-07-31T02:10:49.362700",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 10
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 4
+    },
+    "timestamp": "2025-07-31T02:11:29.379591",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": 10
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 9
+    },
+    "timestamp": "2025-07-31T02:12:09.398078",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 2
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 9
+    },
+    "timestamp": "2025-07-31T02:12:49.419335",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": 3
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": 11
+    },
+    "timestamp": "2025-07-31T02:13:29.427297",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": 5
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": 9
+    },
+    "timestamp": "2025-07-31T02:14:09.439981",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": 7
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 6
+    },
+    "timestamp": "2025-07-31T02:14:49.487130",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 6
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 6
+    },
+    "timestamp": "2025-07-31T02:15:29.588654",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 5
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": 13
+    },
+    "timestamp": "2025-07-31T02:16:09.614260",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": 4
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 4
+    },
+    "timestamp": "2025-07-31T02:16:49.629342",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": 2
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 7
+    },
+    "timestamp": "2025-07-31T02:17:29.635465",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": 9
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 10
+    },
+    "timestamp": "2025-07-31T02:18:09.640865",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": 8
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 3
+    },
+    "timestamp": "2025-07-31T02:18:49.650447",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": 5
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": 9
+    },
+    "timestamp": "2025-07-31T02:19:29.671254",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 5
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": 5
+    },
+    "timestamp": "2025-07-31T02:20:09.682782",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 9
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": 9
+    },
+    "timestamp": "2025-07-31T02:20:49.688401",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": 10
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 7
+    },
+    "timestamp": "2025-07-31T02:21:29.705152",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": 1
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": 11
+    },
+    "timestamp": "2025-07-31T02:23:19.123292",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 3
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": 7
+    },
+    "timestamp": "2025-07-31T02:23:59.130057",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 6
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": 3
+    },
+    "timestamp": "2025-07-31T02:24:39.137791",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": 5
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": 9
+    },
+    "timestamp": "2025-07-31T02:25:19.182080",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 11
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 7
+    },
+    "timestamp": "2025-07-31T02:25:59.199028",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 5
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 12
+    },
+    "timestamp": "2025-07-31T02:26:39.205080",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": 10
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": 1
+    },
+    "timestamp": "2025-07-31T02:27:19.214804",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": 6
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 9
+    },
+    "timestamp": "2025-07-31T02:27:59.225140",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 9
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 13
+    },
+    "timestamp": "2025-07-31T02:28:39.235441",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": 1
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": 5
+    },
+    "timestamp": "2025-07-31T02:30:22.108291",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": 11
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": 4
+    },
+    "timestamp": "2025-07-31T02:31:02.157892",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": 6
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": 9
+    },
+    "timestamp": "2025-07-31T02:31:42.171060",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": 2
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": 6
+    },
+    "timestamp": "2025-07-31T02:32:22.183887",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": 1
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 9
+    },
+    "timestamp": "2025-07-31T02:33:02.194168",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": 9
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 1
+    },
+    "timestamp": "2025-07-31T02:33:42.202414",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": 3
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 7
+    },
+    "timestamp": "2025-07-31T02:34:22.344388",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": 9
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 8
+    },
+    "timestamp": "2025-07-31T02:35:02.378781",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": 7
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": 2
+    },
+    "timestamp": "2025-07-31T02:35:42.389515",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": 5
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": 11
+    },
+    "timestamp": "2025-07-31T02:36:22.417457",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": 1
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": 13
+    },
+    "timestamp": "2025-07-31T02:37:02.480508",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": 4
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": 10
+    },
+    "timestamp": "2025-07-31T02:37:42.491096",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": 1
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 1
+    },
+    "timestamp": "2025-07-31T02:38:22.505272",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": 7
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": 10
+    },
+    "timestamp": "2025-07-31T02:39:02.519747",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": 8
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": 3
+    },
+    "timestamp": "2025-07-31T02:39:42.533530",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": "9"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "8"
+    },
+    "timestamp": "01:04:50",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": "7"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "Q"
+    },
+    "timestamp": "01:05:32",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "3"
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": "4"
+    },
+    "timestamp": "01:05:47",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": "10"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "A"
+    },
+    "timestamp": "01:06:21",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "4"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "Q"
+    },
+    "timestamp": "01:06:52",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "8"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "4"
+    },
+    "timestamp": "01:27:56",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": "A"
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": "2"
+    },
+    "timestamp": "01:28:31",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "6"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "A"
+    },
+    "timestamp": "01:29:04",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "2"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "J"
+    },
+    "timestamp": "01:29:29",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "6"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "J"
+    },
+    "timestamp": "01:29:45",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": "6"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "Q"
+    },
+    "timestamp": "01:30:12",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": "Q"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "K"
+    },
+    "timestamp": "01:30:42",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "10"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "6"
+    },
+    "timestamp": "01:31:13",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": "8"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "2"
+    },
+    "timestamp": "01:31:34",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": "10"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "8"
+    },
+    "timestamp": "01:32:04",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": "4"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "5"
+    },
+    "timestamp": "01:32:19",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "6"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "8"
+    },
+    "timestamp": "01:32:43",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": "5"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "4"
+    },
+    "timestamp": "01:33:22",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": "5"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "3"
+    },
+    "timestamp": "01:33:55",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": "8"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "3"
+    },
+    "timestamp": "01:34:30",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "3"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "10"
+    },
+    "timestamp": "01:35:10",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": "10"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "A"
+    },
+    "timestamp": "01:35:34",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "4"
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": "6"
+    },
+    "timestamp": "01:35:57",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "6"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "K"
+    },
+    "timestamp": "01:36:13",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": "2"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "6"
+    },
+    "timestamp": "01:36:43",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": "K"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "Q"
+    },
+    "timestamp": "01:37:19",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "5"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "6"
+    },
+    "timestamp": "01:37:40",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "4"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "8"
+    },
+    "timestamp": "01:38:07",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": "K"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "K"
+    },
+    "timestamp": "01:38:41",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "7"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "J"
+    },
+    "timestamp": "01:38:57",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "4"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "K"
+    },
+    "timestamp": "01:39:17",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "4"
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": "4"
+    },
+    "timestamp": "01:39:42",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "7"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "10"
+    },
+    "timestamp": "01:40:11",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "9"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "9"
+    },
+    "timestamp": "01:45:06",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "9"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "5"
+    },
+    "timestamp": "01:45:06",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": "6"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "9"
+    },
+    "timestamp": "01:45:06",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "K"
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": "5"
+    },
+    "timestamp": "01:45:06",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "7"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "A"
+    },
+    "timestamp": "01:45:06",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "A"
+    },
+    "carta_azul": {
+      "naipe": "♦",
+      "valor": "K"
+    },
+    "timestamp": "01:46:39",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "J"
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": "Q"
+    },
+    "timestamp": "01:46:57",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "6"
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": "9"
+    },
+    "timestamp": "01:47:28",
+    "vencedor": "Visitante"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♣",
+      "valor": "J"
+    },
+    "carta_azul": {
+      "naipe": "♥",
+      "valor": "10"
+    },
+    "timestamp": "01:48:01",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": "9"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "9"
+    },
+    "timestamp": "01:48:23",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": "A"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "A"
+    },
+    "timestamp": "02:05:26",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "A"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "A"
+    },
+    "timestamp": "02:05:31",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": "A"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "A"
+    },
+    "timestamp": "02:06:10",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♠",
+      "valor": "A"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "A"
+    },
+    "timestamp": "02:06:36",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "A"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "A"
+    },
+    "timestamp": "02:07:33",
+    "vencedor": "Empate"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "J"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "A"
+    },
+    "timestamp": "02:07:37",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♦",
+      "valor": "4"
+    },
+    "carta_azul": {
+      "naipe": "♠",
+      "valor": "A"
+    },
+    "timestamp": "02:08:03",
+    "vencedor": "Casa"
+  },
+  {
+    "carta_vermelha": {
+      "naipe": "♥",
+      "valor": "4"
+    },
+    "carta_azul": {
+      "naipe": "♣",
+      "valor": "A"
+    },
+    "timestamp": "02:10:08",
+    "vencedor": "Casa"
+  }
+]
