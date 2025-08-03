@@ -9,7 +9,6 @@
 </head>
 <body>
     <div class="game-container">
-        <!-- JOGO INTEGRADO -->
         <div class="game-frame">
             <div class="floating-info">
                 <div>🎯 <strong>Football Studio Integrado</strong></div>
@@ -25,7 +24,6 @@
             </iframe>
         </div>
         
-        <!-- PAINEL DE CONTROLE -->
         <div class="sidebar">
             <div class="logo">
                 <img src="{{ url_for('static', filename='logomago.png') }}" alt="Academia do Mago">
@@ -56,6 +54,9 @@
                 
                 <button class="btn btn-test" onclick="testarCaptura()">
                     📸 Testar Captura
+                </button>
+                <button class="btn btn-danger" onclick="limparDados()">
+                    🗑️ Limpar Dados
                 </button>
             </div>
             
@@ -100,11 +101,8 @@
                 .then(data => {
                     if (data.success) {
                         monitoramentoAtivo = true;
-                        atualizarStatus('Monitoramento Ativo', 'Sistema capturando dados do iframe', true);
+                        atualizarStatus('Monitoramento Ativo', 'Sistema capturando dados', true);
                         iniciarAtualizacaoStatus();
-                        
-                        // Tentar monitorar o iframe
-                        monitorarIframe();
                     } else {
                         alert('❌ Erro: ' + data.message);
                     }
@@ -124,7 +122,7 @@
                         monitoramentoAtivo = true;
                         atualizarStatus('Sistema Avançado', 'Múltiplas estratégias ativas', true);
                         iniciarAtualizacaoStatus();
-                        alert('🔬 Sistema Avançado Ativado!\n\n5 estratégias funcionando simultaneamente.');
+                        alert('🔬 Sistema Avançado Ativado!');
                     } else {
                         alert('❌ Erro: ' + data.message);
                     }
@@ -140,11 +138,7 @@
             fetch('/capturar_teste', { method: 'POST' })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.success) {
-                        alert('📸 ' + data.message);
-                    } else {
-                        alert('❌ ' + data.message);
-                    }
+                    alert((data.success ? '📸 ' : '❌ ') + data.message);
                 })
                 .catch(error => {
                     console.error('Erro:', error);
@@ -152,14 +146,44 @@
                 });
         }
 
+        // =======================================================
+        // FUNÇÃO ADICIONADA ABAIXO
+        // =======================================================
+        function limparDados() {
+            // Pede confirmação ao usuário antes de uma ação destrutiva
+            if (confirm('Você tem certeza que deseja limpar todo o histórico de rodadas? Esta ação não pode ser desfeita.')) {
+                fetch('/limpar_dados', { method: 'POST' })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert(data.message);
+                            // Atualiza a interface imediatamente para refletir os dados limpos
+                            document.getElementById('totalRodadas').textContent = '0';
+                            document.getElementById('vitoriasVermelho').textContent = '0';
+                            document.getElementById('vitoriasAzul').textContent = '0';
+                            document.getElementById('empates').textContent = '0';
+                            document.getElementById('recentGamesList').innerHTML = '<div class="waiting-message">Aguardando dados...</div>';
+                            document.getElementById('last-update').textContent = 'Dados limpos';
+                        } else {
+                            alert('❌ Erro: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erro:', error);
+                        alert('❌ Ocorreu um erro ao tentar limpar os dados.');
+                    });
+            }
+        }
+
         // Função para parar monitoramento
         function pararMonitoramento() {
-            fetch('/parar_monitor', { method: 'POST' })
+            fetch('/parar_monitoramento', { method: 'POST' })
                 .then(response => response.json())
                 .then(data => {
                     monitoramentoAtivo = false;
                     atualizarStatus('Sistema Parado', 'Monitoramento desativado', false);
                     pararAtualizacaoStatus();
+                    alert(data.message);
                 })
                 .catch(error => {
                     console.error('Erro:', error);
@@ -182,11 +206,11 @@
         
         // Iniciar atualização de status
         function iniciarAtualizacaoStatus() {
+            if (statusInterval) clearInterval(statusInterval); // Limpa intervalo anterior se existir
             statusInterval = setInterval(() => {
                 fetch('/status_monitor')
                     .then(response => response.json())
                     .then(data => {
-                        // Atualizar estatísticas
                         if (data.stats) {
                             document.getElementById('totalRodadas').textContent = data.stats.total_rodadas || 0;
                             document.getElementById('vitoriasVermelho').textContent = data.stats.vitorias_vermelho || 0;
@@ -194,17 +218,23 @@
                             document.getElementById('empates').textContent = data.stats.empates || 0;
                         }
                         
-                        // Atualizar lista de rodadas
                         if (data.ultimas_rodadas) {
                             atualizarListaRodadas(data.ultimas_rodadas);
                         }
                         
-                        // Atualizar última atividade
                         if (data.ultima_atividade) {
-                            document.getElementById('last-update').textContent = data.ultima_atividade;
+                            document.getElementById('last-update').textContent = data.timestamp + ' - ' + data.ultima_atividade;
+                        }
+
+                        // Se o backend informar que o monitoramento parou, atualiza o frontend
+                        if (monitoramentoAtivo && !data.ativo) {
+                            pararMonitoramento();
                         }
                     })
-                    .catch(error => console.log('Erro ao atualizar:', error));
+                    .catch(error => {
+                        console.log('Erro ao atualizar status:', error);
+                        pararAtualizacaoStatus(); // Para de tentar se houver erro de rede
+                    });
             }, 3000);
         }
         
@@ -218,8 +248,8 @@
         // Atualizar lista de rodadas
         function atualizarListaRodadas(rodadas) {
             const lista = document.getElementById('recentGamesList');
-            if (rodadas.length === 0) {
-                lista.innerHTML = '<div style="text-align: center; color: #666; padding: 20px;">Aguardando dados...</div>';
+            if (!rodadas || rodadas.length === 0) {
+                lista.innerHTML = '<div class="waiting-message">Aguardando dados...</div>';
                 return;
             }
             
@@ -238,50 +268,12 @@
             lista.innerHTML = html;
         }
         
-        // Tentar monitorar iframe (limitado por CORS, mas tentamos)
-        function monitorarIframe() {
-            try {
-                const iframe = document.getElementById('gameFrame');
-                
-                // Listener para mudanças no iframe
-                iframe.addEventListener('load', () => {
-                    console.log('🎮 Jogo carregado no iframe');
-                    
-                    try {
-                        // Tentar acessar conteúdo do iframe (pode ser bloqueado por CORS)
-                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                        console.log('📄 Acesso ao documento do iframe obtido');
-                        
-                        // Monitorar mudanças no DOM do iframe
-                        const observer = new MutationObserver((mutations) => {
-                            mutations.forEach((mutation) => {
-                                if (mutation.type === 'childList') {
-                                    console.log('🔄 Mudança detectada no jogo');
-                                    // Aqui poderíamos extrair dados se não fosse bloqueado por CORS
-                                }
-                            });
-                        });
-                        
-                        observer.observe(iframeDoc.body, {
-                            childList: true,
-                            subtree: true
-                        });
-                        
-                    } catch (error) {
-                        console.log('⚠️ CORS bloqueia acesso ao iframe (normal para sites externos)');
-                        console.log('✅ Usando sistema de backend para monitoramento');
-                    }
-                });
-                
-            } catch (error) {
-                console.log('❌ Erro no monitoramento do iframe:', error);
-            }
-        }
-        
         // Inicializar quando a página carregar
         document.addEventListener('DOMContentLoaded', () => {
             console.log('🚀 Sistema integrado inicializado');
             atualizarStatus('Sistema Carregado', 'Pronto para monitorar', false);
+            // Inicia a busca por status para já carregar os dados existentes
+            iniciarAtualizacaoStatus();
         });
     </script>
 </body>

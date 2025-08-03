@@ -175,18 +175,26 @@ def gerar_carta_realista():
     return CartaFootballStudio(naipe, valor)
 
 def capturar_tela_jogo():
-    """Captura a tela do jogo para análise"""
+    """Captura apenas a REGIÃO DE INTERESSE (ROI) do jogo para análise."""
     try:
-        # Capturar a tela inteira
-        screenshot = pyautogui.screenshot()
+        # === INSERA AQUI AS SUAS COORDENADAS ===
+        # Exemplo de valores, use os que você encontrou:
+        x_inicial = 224
+        y_inicial = 320
+        largura = 719
+        altura = 444
+        # =======================================
         
-        # Converter para numpy array
+        # Captura apenas a região especificada
+        screenshot = pyautogui.screenshot(region=(x_inicial, y_inicial, largura, altura))
+        
+        # O resto do código permanece igual
         img_np = np.array(screenshot)
         img_bgr = cv2.cvtColor(img_np, cv2.COLOR_RGB2BGR)
         
         return img_bgr
     except Exception as e:
-        print(f"❌ Erro ao capturar tela: {e}")
+        print(f"❌ Erro ao capturar a região da tela: {e}")
         return None
 
 def detectar_cartas_football_studio(img):
@@ -484,19 +492,39 @@ def iniciar_monitoramento_integrado():
 
 @app.route('/parar_monitoramento', methods=['POST'])
 def parar_monitoramento():
-    """Para o monitoramento"""
-    global monitoramento_ativo
-    
+    """Para o monitoramento de forma controlada"""
+    global monitoramento_ativo, thread_monitoramento  # Adicionar thread_monitoramento ao escopo global
+
     try:
-        monitoramento_ativo = False
-        return jsonify({
-            'success': True,
-            'message': '⏹️ Monitoramento parado!'
-        })
+        if monitoramento_ativo and thread_monitoramento is not None:
+            print("⏹️ Recebido comando para parar o monitoramento...")
+            monitoramento_ativo = False  # Sinaliza para a thread parar
+
+            # Espera a thread terminar. O timeout evita que a requisição fique presa indefinidamente.
+            thread_monitoramento.join(timeout=5)
+
+            if thread_monitoramento.is_alive():
+                print("⚠️ A thread não parou no tempo esperado.")
+                return jsonify({
+                    'success': False,
+                    'message': '⚠️ A thread não respondeu ao comando de parada.'
+                })
+
+            thread_monitoramento = None  # Limpa a referência da thread
+            print("✅ Monitoramento parado com sucesso.")
+            return jsonify({
+                'success': True,
+                'message': '⏹️ Monitoramento parado com sucesso!'
+            })
+        else:
+            return jsonify({
+                'success': False,
+                'message': 'ℹ️ O monitoramento não estava ativo.'
+            })
     except Exception as e:
         return jsonify({
             'success': False,
-            'message': f'❌ Erro: {str(e)}'
+            'message': f'❌ Erro ao parar monitoramento: {str(e)}'
         })
 
 @app.route('/iniciar_captura_avancada', methods=['POST'])
@@ -615,16 +643,20 @@ def status_monitor():
 
 @app.route('/limpar_dados', methods=['POST'])
 def limpar_dados():
-    """Limpa todos os dados"""
+    """Limpa o histórico na memória e no arquivo JSON."""
     global catalogador, ultima_atividade
     
     try:
-        catalogador = CatalogadorCartas()
+        # Limpa a lista na memória
+        catalogador.historico = []
+        # Salva a lista vazia no arquivo, sobrescrevendo o conteúdo antigo
+        catalogador.salvar_dados()
+        
         ultima_atividade = "Dados limpos"
         
         return jsonify({
             'success': True,
-            'message': '🗑️ Dados limpos com sucesso!'
+            'message': '🗑️ Dados e histórico limpos com sucesso!'
         })
     except Exception as e:
         return jsonify({
