@@ -259,8 +259,11 @@
                         <div class="card-mini card-vermelho">${rodada.carta_vermelha}</div>
                         <div class="card-mini card-azul">${rodada.carta_azul}</div>
                     </div>
-                    <div class="result-mini result-${rodada.resultado}">
-                        ${rodada.resultado === 'vermelho' ? '🔴' : rodada.resultado === 'azul' ? '🔵' : '🟡'}
+                    <div class="game-result">
+                        <div class="result-mini result-${rodada.resultado}">
+                            ${rodada.resultado === 'vermelho' ? '🔴' : rodada.resultado === 'azul' ? '🔵' : '🟡'}
+                        </div>
+                        <div class="winner-text">${rodada.vencedor_texto || rodada.vencedor}</div>
                     </div>
                 </div>
             `).join('');

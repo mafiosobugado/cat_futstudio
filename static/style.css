@@ -417,6 +417,32 @@ body {
     gap: 5px;
 }
 
+.game-result {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.winner-text {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--text-secondary);
+    min-width: 80px;
+    text-align: center;
+}
+
+.result-vermelho .winner-text {
+    color: var(--danger-color);
+}
+
+.result-azul .winner-text {
+    color: var(--info-color);
+}
+
+.result-empate .winner-text {
+    color: var(--primary-gold);
+}
+
 .card-mini {
     padding: 2px 6px;
     border-radius: 3px;
