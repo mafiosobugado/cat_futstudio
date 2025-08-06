@@ -5,7 +5,8 @@
 
 ### 1. 🎮 Abrir o Football Studio
 - Abra seu navegador
-- Entre no Football Studio
+- Acesse: https://luck.bet.br/live-casino/game/1170048?provider=Evolution&from=%2Flive-casino&locale=pt-BR&lang=pt
+- Entre no Football Studio (versão em português)
 - Aguarde aparecer cartas na tela
 
 ### 2. 📦 Criar Templates das Cartas

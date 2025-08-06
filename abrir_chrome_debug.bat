@@ -20,7 +20,7 @@ echo.
 echo ✅ Chrome aberto com debug habilitado!
 echo.
 echo 📋 PRÓXIMOS PASSOS:
-echo 1. Acesse https://luck.bet.br/live-casino/game/1384453
+echo 1. Acesse https://luck.bet.br/live-casino/game/1170048?provider=Evolution&from=%2Flive-casino&locale=pt-BR&lang=pt
 echo 2. Faça login na Luckbet
 echo 3. Entre no Football Studio
 echo 4. No sistema, clique em um dos botões de captura

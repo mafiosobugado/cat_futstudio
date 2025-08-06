@@ -9,26 +9,14 @@
 </head>
 <body>
     <div class="game-container">
-        <div class="game-frame">
-            <div class="floating-info">
-                <div>🎯 <strong>Football Studio Integrado</strong></div>
-                <div>📊 Monitoramento: <span id="monitor-status">Aguardando</span></div>
-                <div>⏰ <span id="last-update">--:--:--</span></div>
-            </div>
-            
-            <iframe 
-                id="gameFrame"
-                src="https://luck.bet.br/live-casino/game/1384453"
-                allow="camera; microphone; encrypted-media; fullscreen"
-                allowfullscreen>
-            </iframe>
-        </div>
-        
+        <!-- Header com informações principais -->
         <div class="sidebar">
             <div class="logo">
                 <img src="{{ url_for('static', filename='logomago.png') }}" alt="Academia do Mago">
-                <h3 class="logo-title">Football Studio</h3>
-                <p class="logo-subtitle">Jogue e Monitore</p>
+                <div>
+                    <h3 class="logo-title">Football Studio</h3>
+                    <p class="logo-subtitle">Jogue e Monitore</p>
+                </div>
             </div>
             
             <div class="status-panel">
@@ -44,16 +32,6 @@
             <div class="controls">
                 <button class="btn btn-primary" onclick="iniciarMonitoramentoIntegrado()">
                     🎯 Iniciar Monitoramento Real
-                </button>
-                <button class="btn btn-advanced" onclick="iniciarSistemaAvancado()">
-                    🔬 Sistema Avançado Real
-                </button>
-                <button class="btn btn-stop" onclick="pararMonitoramento()">
-                    ⏹️ Parar Sistema
-                </button>
-                
-                <button class="btn btn-test" onclick="testarCaptura()">
-                    📸 Testar Captura
                 </button>
                 <button class="btn btn-danger" onclick="limparDados()">
                     🗑️ Limpar Dados
@@ -88,64 +66,73 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Área principal do jogo -->
+        <div class="game-frame">
+            <div class="floating-info">
+                <div>🎯 <strong>Football Studio Integrado</strong></div>
+                <div>📊 Monitoramento: <span id="monitor-status">Aguardando</span></div>
+                <div>⏰ <span id="last-update">--:--:--</span></div>
+            </div>
+            
+            <iframe 
+                id="gameFrame"
+                src="https://luck.bet.br/live-casino/game/1170048?provider=Evolution&from=%2Flive-casino&locale=pt-BR&lang=pt&language=pt"
+                allow="camera; microphone; encrypted-media; fullscreen"
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 
     <script>
         let monitoramentoAtivo = false;
         let statusInterval;
         
-        // Função para monitoramento integrado (mais simples)
+        // Função para garantir que o jogo carregue em português
+        function garantirIdiomaPortugues() {
+            const iframe = document.getElementById('gameFrame');
+            const urlComIdioma = 'https://luck.bet.br/live-casino/game/1170048?provider=Evolution&from=%2Flive-casino&locale=pt-BR&lang=pt&language=pt';
+            
+            // Atualiza a URL se necessário
+            if (iframe.src !== urlComIdioma) {
+                console.log('🔄 Forçando idioma português...');
+                iframe.src = urlComIdioma;
+            }
+        }
+        
+        // Função para monitoramento integrado (inicia sistema avançado automaticamente)
         function iniciarMonitoramentoIntegrado() {
+            // Primeiro inicia o monitoramento integrado
             fetch('/iniciar_monitoramento_integrado', { method: 'POST' })
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
                         monitoramentoAtivo = true;
                         atualizarStatus('Monitoramento Ativo', 'Sistema capturando dados', true);
-                        iniciarAtualizacaoStatus();
+                        
+                        // Automaticamente inicia o sistema avançado
+                        return fetch('/iniciar_captura_avancada', { method: 'POST' });
                     } else {
-                        alert('❌ Erro: ' + data.message);
+                        throw new Error(data.message);
                     }
                 })
-                .catch(error => {
-                    console.error('Erro:', error);
-                    alert('❌ Erro ao iniciar monitoramento');
-                });
-        }
-        
-        // Função para sistema avançado
-        function iniciarSistemaAvancado() {
-            fetch('/iniciar_captura_avancada', { method: 'POST' })
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        monitoramentoAtivo = true;
-                        atualizarStatus('Sistema Avançado', 'Múltiplas estratégias ativas', true);
+                        atualizarStatus('Sistema Avançado Ativo', 'Monitoramento real + múltiplas estratégias', true);
                         iniciarAtualizacaoStatus();
-                        alert('🔬 Sistema Avançado Ativado!');
+                        console.log('🔬 Sistema Avançado iniciado automaticamente!');
                     } else {
-                        alert('❌ Erro: ' + data.message);
+                        console.warn('Sistema básico iniciado, mas sistema avançado falhou:', data.message);
+                        iniciarAtualizacaoStatus();
                     }
                 })
                 .catch(error => {
                     console.error('Erro:', error);
-                    alert('❌ Erro ao iniciar sistema avançado');
+                    alert('❌ Erro ao iniciar monitoramento: ' + error.message);
                 });
         }
         
-        // Função para testar captura
-        function testarCaptura() {
-            fetch('/capturar_teste', { method: 'POST' })
-                .then(response => response.json())
-                .then(data => {
-                    alert((data.success ? '📸 ' : '❌ ') + data.message);
-                })
-                .catch(error => {
-                    console.error('Erro:', error);
-                    alert('❌ Erro ao testar captura');
-                });
-        }
-
         // =======================================================
         // FUNÇÃO ADICIONADA ABAIXO
         // =======================================================
@@ -175,19 +162,11 @@
             }
         }
 
-        // Função para parar monitoramento
-        function pararMonitoramento() {
-            fetch('/parar_monitoramento', { method: 'POST' })
-                .then(response => response.json())
-                .then(data => {
-                    monitoramentoAtivo = false;
-                    atualizarStatus('Sistema Parado', 'Monitoramento desativado', false);
-                    pararAtualizacaoStatus();
-                    alert(data.message);
-                })
-                .catch(error => {
-                    console.error('Erro:', error);
-                });
+        // Função simplificada para parar monitoramento (usada internamente)
+        function pararMonitoramentoInterno() {
+            monitoramentoAtivo = false;
+            atualizarStatus('Sistema Parado', 'Monitoramento desativado', false);
+            pararAtualizacaoStatus();
         }
         
         // Atualizar status visual
@@ -228,7 +207,7 @@
 
                         // Se o backend informar que o monitoramento parou, atualiza o frontend
                         if (monitoramentoAtivo && !data.ativo) {
-                            pararMonitoramento();
+                            pararMonitoramentoInterno();
                         }
                     })
                     .catch(error => {
@@ -274,6 +253,7 @@
         // Inicializar quando a página carregar
         document.addEventListener('DOMContentLoaded', () => {
             console.log('🚀 Sistema integrado inicializado');
+            garantirIdiomaPortugues(); // Força idioma português
             atualizarStatus('Sistema Carregado', 'Pronto para monitorar', false);
             // Inicia a busca por status para já carregar os dados existentes
             iniciarAtualizacaoStatus();
