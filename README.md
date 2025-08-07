@@ -27,8 +27,6 @@ python app.py
 - Abra seu navegador em: `http://localhost:5000`
 - Faça login com suas credenciais
 - Acesse o sistema integrado
-- O Football Studio será carregado automaticamente na URL: 
-  `https://luck.bet.br/live-casino/game/1170048?provider=Evolution&from=%2Flive-casino`
 
 ## 📁 Estrutura do Projeto
 
